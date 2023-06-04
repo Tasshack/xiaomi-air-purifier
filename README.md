@@ -1,0 +1,1 @@
+# Xiaomi Air Purifier 4 integration for Home Assistant

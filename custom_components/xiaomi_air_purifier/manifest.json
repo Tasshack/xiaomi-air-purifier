@@ -1,0 +1,17 @@
+{
+  "domain": "xiaomi_air_purifier",
+  "name": "Xiaomi Air Purifier",
+  "config_flow": true,
+  "integration_type": "device",
+  "documentation": "https://github.com/Tasshack/xiaomi-air-purifier",
+  "issue_tracker": "https://github.com/Tasshack/xiaomi-air-purifier/issues",
+  "codeowners": [ "@tasshack" ],
+  "requirements": [
+    "pybase64",
+    "requests",
+    "pycryptodome",
+    "python-miio>=0.5.6"
+  ],
+  "version": "v0.0.1",
+  "iot_class": "local_polling"
+}

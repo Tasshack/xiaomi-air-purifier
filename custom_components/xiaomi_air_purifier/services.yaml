@@ -1,0 +1,89 @@
+fan_reset_filter:
+  name: Fan reset filter
+  description: Reset the filter lifetime and usage.
+  fields:
+    entity_id:
+      description: Name of the xiaomi air purifier entity.
+      selector:
+        entity:
+          integration: xiaomi_air_purifier
+          domain: fan
+
+fan_toggle_power:
+  name: Toggle power
+  description: Toggle power state
+  fields:
+    entity_id:
+      description: Name of the xiaomi air purifier entity.
+      selector:
+        entity:
+          integration: xiaomi_air_purifier
+          domain: fan
+
+fan_toggle_mode:
+  name: Toggle Mode
+  description: Switch mode to next mode
+  fields:
+    entity_id:
+      description: Name of the xiaomi air purifier entity.
+      selector:
+        entity:
+          integration: xiaomi_air_purifier
+          domain: fan
+
+fan_toggle_fan_level:
+  name: Toggle fan level
+  description: Switch fan level to next fan level
+  fields:
+    entity_id:
+      description: Name of the xiaomi air purifier entity.
+      selector:
+        entity:
+          integration: xiaomi_air_purifier
+          domain: fan
+
+select_select_previous:
+  name: Select Previous
+  description: Select the previous options of an select entity.
+  target:
+    entity:
+      integration: xiaomi_air_purifier
+      domain: select
+  fields:
+    cycle:
+      name: Cycle
+      description: If the option should cycle from the first to the last.
+      default: true
+      selector:
+        boolean:
+
+select_select_first:
+  name: Select First
+  description: Select the first option of an select entity.
+  target:
+    entity:
+      integration: xiaomi_air_purifier
+      domain: select
+
+select_select_last:
+  name: Select Last
+  description: Select the last option of an select entity.
+  target:
+    entity:
+      integration: xiaomi_air_purifier
+      domain: select
+
+select_select_next:
+  name: Select Next
+  description: Select the next options of an select entity.
+  target:
+    entity:
+      integration: xiaomi_air_purifier
+      domain: select
+  fields:
+    cycle:
+      name: Cycle
+      description: If the option should cycle from the last to the first.
+      default: true
+      selector:
+        boolean:

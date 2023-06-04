@@ -1,0 +1,166 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "Device is already configured",
+      "cannot_connect": "Failed to connect."
+    },
+    "error": {
+      "cannot_connect": "Failed to connect.",
+      "unsupported": "Device is not supported",
+      "wrong_token": "Checksum error, wrong token",
+      "2fa_required": "2FA Login required\n{url}",
+      "credentials_incomplete": "Credentials incomplete, please fill in username, password and country",
+      "login_error": "Could not login to Xiaomi Miio Cloud, check the credentials.",
+      "no_devices": "No supported devices found in this Xiaomi Miio cloud account on selected country."
+    },
+    "step": {
+      "manual": {
+        "data": {
+          "host": "Host",
+          "token": "Token"
+        },
+        "description": "You will need the 32 character API Token, see https://www.home-assistant.io/integrations/xiaomi_miio#retrieving-the-access-token for instructions."
+      },
+      "cloud": {
+        "data": {
+          "username": "Username",
+          "password": "Password",
+          "country": "Server country",
+          "prefer_cloud": "Prefer cloud connection",
+          "manual": "Configure manually (not recommended)"
+        },
+        "description": "Log in to the Xiaomi Miio cloud, see https://www.openhab.org/addons/bindings/miio/#country-servers for the cloud server to use."
+      },
+      "devices": {
+        "data": {
+          "devices": "Supported Devices"
+        },
+        "description": "Please select the Xiaomi Air Purifier device you want to setup."
+      },
+      "options": {
+        "data": {
+          "name": "Name",
+          "notify": "Notification"
+        }
+      },
+      "reauth_confirm": {
+        "description": "Xiaomi Air Purifier integration needs to re-authenticate your account in order to update the tokens or add missing cloud credentials.",
+        "title": "Reauthenticate Integration"
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "notify": "Notification",
+          "prefer_cloud": "Prefer cloud connection"
+        }
+      }
+    },
+    "error": {
+      "cloud_credentials_incomplete": "Cloud credentials incomplete, please fill in username, password and country"
+    }
+  },
+  "entity": {
+    "select": {
+      "mode": {
+        "state": {
+          "unknown": "Unknown",
+          "auto": "Auto",
+          "sleep": "Sleep",
+          "favorite": "Favorite",
+          "manual": "Manual"
+        }
+      },
+      "screen_brightness": {
+        "state": {
+          "unknown": "Unknown",
+          "off": "Off",
+          "dim": "Dim",
+          "bright": "Bright"
+        }
+      },
+      "temperature_unit": {
+        "state": {
+          "unknown": "Unknown",
+          "celcius": "Celcius",
+          "fahrenheit": "Fahrenheit"
+        }
+      },
+      "coverage": {
+        "state": {
+          "unknown": "Unknown",
+          "five_to_nine": "5-9m²",
+          "seven_to_thirtheen": "7-13m²",
+          "eleven_to_nineteen": "11-19m²",
+          "thirtheen_to_twenty_two": "13-22m²",
+          "seventeen_to_twenty_eight": "17-28m²",
+          "nineteen_to_thirty_three": "19-33m²",
+          "twenty_to_thirty_four": "20-34m²",
+          "twenty_one_to_thirty_six": "21-36m²",
+          "twenty_three_to_thirty_nine": "23-39m²",
+          "twenty_four_to_fourty": "24-40m²",
+          "twenty_six_to_fourty_four": "26-44m²",
+          "twenty_eight_to_fourty_eight": "28-48m²",
+          "manual": "Manual"
+        }
+      },
+      "fan_level": {
+        "state": {
+          "unknown": "Unknown",
+          "high": "High",
+          "low": "Low",
+          "medium": "Medium"
+        }
+      }
+    },
+    "sensor": {
+      "fan_level": {
+        "state": {
+          "unknown": "Unknown",
+          "high": "High",
+          "low": "Low",
+          "medium": "Medium"
+        }
+      },
+      "air_quality": {
+        "state": {
+          "unknown": "Unknown",
+          "excellent": "Excellent",
+          "good": "Good",
+          "moderate": "Moderate",
+          "poor": "Poor",
+          "unhealty": "Unhealty",
+          "hazardous": "Hazardous"
+        }
+      },
+      "door_status": {
+        "state": {
+          "unknown": "Unknown",
+          "open": "Open",
+          "closed": "Closed"
+        }
+      },
+      "fault": {
+        "state": {
+          "unknown": "Unknown",
+          "no_fault": "No Fault",
+          "pm_sensor": "PM Sensor",
+          "temperature_sensor": "Temperature Sensor",
+          "humidity_sensor": "Humidity Sensor",
+          "no_filter": "No Filter"
+        }
+      },
+      "reboot_reason": {
+        "state": {
+          "unknown": "Unknown",
+          "boot": "Boot",
+          "reboot": "Reboot",
+          "update": "Update",
+          "watchdog_timer": "Watchdog Timer"
+        }
+      }
+    }
+  }
+}

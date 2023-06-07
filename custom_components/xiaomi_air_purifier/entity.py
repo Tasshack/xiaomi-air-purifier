@@ -172,15 +172,15 @@ class XiaomiAirPurifierEntity(CoordinatorEntity[XiaomiAirPurifierDataUpdateCoord
     def extra_state_attributes(self) -> dict[str, str] | None:
         """Return the extra state attributes of the entity."""
         attrs = None
-        if self.entity_description.value_fn is not None or self.entity_description.value_int_fn is not None:
+        if self.entity_description.attrs_fn is not None:
+            attrs = self.entity_description.attrs_fn(self.device)
+        elif self.entity_description.value_fn is not None or self.entity_description.value_int_fn is not None:
             if self.entity_description.property_key is not None:
                 attrs = {
                     ATTR_VALUE: self.device.get_property(
                         self.entity_description.property_key
                     )
                 }
-            elif self.entity_description.attrs_fn is not None:
-                attrs = self.entity_description.attrs_fn(self.device)
         return attrs
 
     @property

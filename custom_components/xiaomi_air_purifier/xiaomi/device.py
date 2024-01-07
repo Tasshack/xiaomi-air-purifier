@@ -457,11 +457,7 @@ class XiaomiAirPurifierDevice:
                 f"{action} is not an action (missing siid or aiid)"
             )
 
-        if (
-            action is not XiaomiAirPurifierAction.REQUEST_MAP
-            and action is not XiaomiAirPurifierAction.UPDATE_MAP_DATA
-        ):
-            self.schedule_update(10)
+        self.schedule_update(10)
 
         # Reset consumable on memory
         if action is XiaomiAirPurifierAction.RESET_FILTER:
@@ -484,11 +480,7 @@ class XiaomiAirPurifierDevice:
         if result:
             _LOGGER.info("Send action %s", action.name)
             self._last_change = time.time()
-            if (
-                action is not XiaomiAirPurifierAction.REQUEST_MAP
-                and action is not XiaomiAirPurifierAction.UPDATE_MAP_DATA
-            ):
-                self._last_settings_request = 0
+            self._last_settings_request = 0
 
         # Schedule update for retrieving new properties after action sent
         self.schedule_update(3)
@@ -823,6 +815,10 @@ class XiaomiAirPurifierDeviceStatus:
     @property
     def temperature(self) -> float:
         return round(float(self._get_property(XiaomiAirPurifierProperty.TEMPERATURE)), 1)
+
+    @property
+    def speed(self):
+        return self._get_property(XiaomiAirPurifierProperty.SPEED)
 
     @property
     def speed_count(self):
